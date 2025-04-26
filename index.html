@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+
+    <!-- Ini adalah style saya -->
+     <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MyProfile</div>
+            <ul class="nav-links">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#skill">Skill</a></li>
+                <li><a href="#motivasi">Motivasi</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>  
+
+
+    <section class="profil" id="tentang">
+
+        <article>
+            <h2 class="judul-kiri">Tentang Saya</h2>
+            <p>Saya adalah pelajar yang sedang belajar membuat website dengan HTML, CSS, dan JavaScript</p>
+        </article>
+    </section>
+
+    <section class="skill" id="skill">
+        <h2>Skill Saya</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript Dasar</li>
+        </ul>
+    </section>
+
+    <section class="hobi">
+        <h2>Hobi Saya</h2>
+        <article>
+            <ul>
+                <li>Ngoding</li>
+                <li>Menyanyi</li>
+                <li>Membaca novel</li>
+                <li>Memasak</li>
+            </ul>
+        </article>
+    </section>
+
+    <section class="motivasi" id="motivasi">
+        <h2>Motivasi Saya</h2>
+        <article>
+            <p>Jangan pernah takut menghadapi masa depan, hadapi lalu perjuangkan masa depan itu!</p>
+        </article>
+    </section>
+    <section class="konten-galeri" id="konten">
+        <h2>Konten Galeri</h2>
+        <div class="galeri-container">
+            <div class="gambar-item"><img src="img/iot.jpg" alt="IOT"></div>
+            <div class="gambar-item"><img src="img/mobileapp.jpg" alt="MOBILE APP"></div>
+            <div class="gambar-item"><img src="img/webdesaign.jpg" alt="WEB DESAIGN"></div>
+        </div>
+    </section>
+
+    <section>
+        <form class="kontak-form" id="kontak">
+    <h3>Hubungi Saya</h3>
+    </section>
+
+    <section>
+        <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" required>
+         </div>
+    </section>
+
+    <section>
+        <div class="form-group">
+             <label for="email">Email</label>
+             <input type="text" id="email" name="email" required>
+         </div>
+    </section>
+
+    <section>
+        <div class="form-group">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" rows="5" required></textarea>
+        </div>
+    </section>
+
+    <button type="submit">Kirim Pesan</button>
+</form>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Profil Cinta G1S1PA</p>
+        <div class="sosmed-links">
+            <a href="https://www.instagram.com/cintakhae/" target="_blank">Instagram</a>
+            <a href="https://wa.me/628875163844" target="_blank">WhatsApp</a>
+        </div>
+    </div>
+</footer>
+
+<button id="btnKembali" title="Kembali ke Atas"></button>
+
+</body>
+</html>
+
+<script>
+    // Efek typing untuk nama
+const text = "Nama Saya Cinta Khaerunnisa.";
+const typingText = document.getElementById("typing-text");
+let i = 0;
+
+function ketik() {
+    if (i < text.length) {
+        typingText.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(ketik, 100); 
+    }
+}
+ketik();
+
+// Efek klik tombol
+const btn = document.getElementById("kontakBtn");
+btn.addEventListener("click", function () {
+    alert("Terima kasih sudah ingin menghubungi saya!");
+});
+</script>
+
+
+<script>
+    document.getElementById('kontak'),addEventListener('submit', function(e) {
+        e.preventDefault();
+
+
+        var nama = document.getElementById('nama'),value;
+        var email = document.getElementById('email'),value;
+        var pesan = document.getElementById('pesan'),value;
+
+
+        var nomorWA = '628875163844' ;
+
+
+        var teks = 'Halo, nama saya ${nama},%0AEmail: ${email},%0APesan: ${pesan}';
+
+
+        var url = 'https://wa.me/${628875163844}?text=${encodeURIComponent(text)}';
+
+
+        window.open(url, '_blank');
+    });
+    </script>
+    <script>
+        const tombolKembali = document.getElementById("btnKembali");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                tombolKembali.classList.add("show");
+            } else {
+                tombolKembali.classList.add("show");
+            }
+        };
+
+        tombolKembali.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
